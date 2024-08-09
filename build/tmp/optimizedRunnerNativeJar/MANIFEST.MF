@@ -1,0 +1,39 @@
+Manifest-Version: 1.0
+Main-Class: example.micronaut.Application
+Class-Path: libs/micronaut-data-mongodb-4.8.4.jar libs/micronaut-serde-j
+ ackson-2.10.2.jar libs/micronaut-views-fieldset-5.4.1.jar libs/micronau
+ t-views-thymeleaf-5.4.1.jar libs/micronaut-serde-bson-2.10.2.jar libs/m
+ icronaut-serde-support-2.10.2.jar libs/micronaut-data-runtime-4.8.4.jar
+  libs/micronaut-data-document-model-4.8.4.jar libs/micronaut-data-tx-4.
+ 8.4.jar libs/micronaut-data-connection-4.8.4.jar libs/micronaut-mongo-r
+ eactive-5.3.0.jar libs/micronaut-mongo-sync-5.3.0.jar libs/micronaut-mo
+ ngo-core-5.3.0.jar libs/micronaut-serde-api-2.10.2.jar libs/micronaut-v
+ alidation-4.6.1.jar libs/micronaut-views-core-5.4.1.jar libs/micronaut-
+ data-model-4.8.4.jar libs/micronaut-reactor-3.4.1.jar libs/micronaut-ht
+ tp-client-4.5.4.jar libs/micronaut-websocket-4.5.4.jar libs/micronaut-h
+ ttp-server-netty-4.5.4.jar libs/micronaut-http-netty-4.5.4.jar libs/mic
+ ronaut-http-server-4.5.4.jar libs/micronaut-http-client-core-4.5.4.jar 
+ libs/micronaut-jackson-core-4.5.4.jar libs/micronaut-json-core-4.5.4.ja
+ r libs/micronaut-router-4.5.4.jar libs/micronaut-http-4.5.4.jar libs/mi
+ cronaut-discovery-core-4.5.4.jar libs/micronaut-context-propagation-4.5
+ .4.jar libs/micronaut-context-4.5.4.jar libs/micronaut-aop-4.5.4.jar li
+ bs/micronaut-buffer-netty-4.5.4.jar libs/micronaut-inject-4.5.4.jar lib
+ s/logback-classic-1.5.3.jar libs/mongodb-driver-sync-4.11.1.jar libs/ja
+ ckson-annotations-2.17.2.jar libs/jackson-core-2.17.2.jar libs/jakarta.
+ annotation-api-2.1.1.jar libs/netty-handler-proxy-4.1.111.Final.jar lib
+ s/netty-codec-http2-4.1.111.Final.jar libs/netty-codec-http-4.1.111.Fin
+ al.jar libs/netty-codec-socks-4.1.111.Final.jar libs/netty-handler-4.1.
+ 111.Final.jar libs/netty-codec-4.1.111.Final.jar libs/netty-transport-n
+ ative-unix-common-4.1.111.Final.jar libs/netty-transport-4.1.111.Final.
+ jar libs/netty-buffer-4.1.111.Final.jar libs/netty-resolver-4.1.111.Fin
+ al.jar libs/netty-common-4.1.111.Final.jar libs/reactor-core-3.6.8.jar 
+ libs/micronaut-core-reactive-4.5.4.jar libs/reactive-streams-1.0.4.jar 
+ libs/micronaut-core-4.5.4.jar libs/jakarta.transaction-api-2.0.1.jar li
+ bs/logback-core-1.5.3.jar libs/thymeleaf-extras-java8time-3.0.4.RELEASE
+ .jar libs/thymeleaf-3.1.2.RELEASE.jar libs/slf4j-api-2.0.13.jar libs/mo
+ ngodb-driver-core-4.11.1.jar libs/bson-record-codec-4.11.1.jar libs/bso
+ n-4.11.2.jar libs/jakarta.validation-api-3.1.0.jar libs/jakarta.inject-
+ api-2.0.1.jar libs/ognl-3.3.4.jar libs/attoparser-2.0.7.RELEASE.jar lib
+ s/unbescape-1.1.6.RELEASE.jar libs/javassist-3.29.0-GA.jar resources/ c
+ lasses/
+

@@ -1,0 +1,39 @@
+Manifest-Version: 1.0
+Class-Path: resources/ classes/ libs/micronaut-data-mongodb-4.8.4.jar li
+ bs/micronaut-serde-jackson-2.10.2.jar libs/micronaut-views-fieldset-5.4
+ .1.jar libs/micronaut-views-thymeleaf-5.4.1.jar libs/micronaut-serde-bs
+ on-2.10.2.jar libs/micronaut-serde-support-2.10.2.jar libs/micronaut-da
+ ta-runtime-4.8.4.jar libs/micronaut-data-document-model-4.8.4.jar libs/
+ micronaut-data-tx-4.8.4.jar libs/micronaut-data-connection-4.8.4.jar li
+ bs/micronaut-mongo-reactive-5.3.0.jar libs/micronaut-mongo-sync-5.3.0.j
+ ar libs/micronaut-mongo-core-5.3.0.jar libs/micronaut-serde-api-2.10.2.
+ jar libs/micronaut-validation-4.6.1.jar libs/micronaut-views-core-5.4.1
+ .jar libs/micronaut-data-model-4.8.4.jar libs/micronaut-reactor-3.4.1.j
+ ar libs/micronaut-http-client-4.5.4.jar libs/micronaut-websocket-4.5.4.
+ jar libs/micronaut-http-server-netty-4.5.4.jar libs/micronaut-http-nett
+ y-4.5.4.jar libs/micronaut-http-server-4.5.4.jar libs/micronaut-http-cl
+ ient-core-4.5.4.jar libs/micronaut-jackson-core-4.5.4.jar libs/micronau
+ t-json-core-4.5.4.jar libs/micronaut-router-4.5.4.jar libs/micronaut-ht
+ tp-4.5.4.jar libs/micronaut-discovery-core-4.5.4.jar libs/micronaut-con
+ text-propagation-4.5.4.jar libs/micronaut-context-4.5.4.jar libs/micron
+ aut-aop-4.5.4.jar libs/micronaut-buffer-netty-4.5.4.jar libs/micronaut-
+ inject-4.5.4.jar libs/logback-classic-1.5.3.jar libs/mongodb-driver-syn
+ c-4.11.1.jar libs/jackson-annotations-2.17.2.jar libs/jackson-core-2.17
+ .2.jar libs/jakarta.annotation-api-2.1.1.jar libs/netty-handler-proxy-4
+ .1.111.Final.jar libs/netty-codec-http2-4.1.111.Final.jar libs/netty-co
+ dec-http-4.1.111.Final.jar libs/netty-codec-socks-4.1.111.Final.jar lib
+ s/netty-handler-4.1.111.Final.jar libs/netty-codec-4.1.111.Final.jar li
+ bs/netty-transport-native-unix-common-4.1.111.Final.jar libs/netty-tran
+ sport-4.1.111.Final.jar libs/netty-buffer-4.1.111.Final.jar libs/netty-
+ resolver-4.1.111.Final.jar libs/netty-common-4.1.111.Final.jar libs/rea
+ ctor-core-3.6.8.jar libs/micronaut-core-reactive-4.5.4.jar libs/reactiv
+ e-streams-1.0.4.jar libs/micronaut-core-4.5.4.jar libs/jakarta.transact
+ ion-api-2.0.1.jar libs/logback-core-1.5.3.jar libs/thymeleaf-extras-jav
+ a8time-3.0.4.RELEASE.jar libs/thymeleaf-3.1.2.RELEASE.jar libs/slf4j-ap
+ i-2.0.13.jar libs/mongodb-driver-core-4.11.1.jar libs/bson-record-codec
+ -4.11.1.jar libs/bson-4.11.2.jar libs/jakarta.validation-api-3.1.0.jar 
+ libs/jakarta.inject-api-2.0.1.jar libs/ognl-3.3.4.jar libs/attoparser-2
+ .0.7.RELEASE.jar libs/unbescape-1.1.6.RELEASE.jar libs/javassist-3.29.0
+ -GA.jar
+Main-Class: example.micronaut.Application
+
