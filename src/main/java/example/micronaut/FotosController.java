@@ -25,6 +25,7 @@ public class FotosController {
     @ExecuteOn(TaskExecutors.BLOCKING) 
     @View("fotos/show.html") 
     @Get("/{id}") 
+    // @Get
     Map<String, Foto> findById(@PathVariable Long id) { 
         return Collections.singletonMap("foto", fotosClient.findById(id));
     }

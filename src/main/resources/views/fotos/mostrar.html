@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Photo</title>
+</head>
+<body>
+<!-- <h1 th:text="${photo.title}"></h1>
+<a th:href="${photo.url}"><img th:src="${photo.thumbnailUrl}" th:alt="${photo.title}"/></a> -->
+<h1>Hola a todos :3</h1>
+<form action="/fotos" method="post">
+    <fieldset>
+        <legend>Creación de frutas</legend>
+        <label for="nombre">
+            <span>Nombre: </span>
+            <input type="text" name="nombre" id="nombre" required>
+        </label>
+        <label for="descripcion">
+            <span>Descripción: </span>
+            <textarea name="descripcion" id="descripcion" required></textarea>
+        </label>
+        <label for="foto">
+            <span>Foto: </span>
+            <input type="file" name="foto" id="foto" required>
+        </label>
+        <button type="submit">Crear fruta</button>
+    </fieldset>
+</form>
+</body>
+</html>
