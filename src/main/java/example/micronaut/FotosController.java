@@ -1,5 +1,8 @@
 package example.micronaut;
 
+import java.util.Collections;
+import java.util.Map;
+
 import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
@@ -9,10 +12,7 @@ import io.micronaut.scheduling.TaskExecutors;
 import io.micronaut.scheduling.annotation.ExecuteOn;
 import io.micronaut.views.View;
 
-import java.util.Collections;
-import java.util.Map;
-
-@Controller("/photos") 
+@Controller("/fotos") 
 public class FotosController {
 
     private final FotosClient fotosClient;
@@ -25,7 +25,6 @@ public class FotosController {
     @ExecuteOn(TaskExecutors.BLOCKING) 
     @View("fotos/show.html") 
     @Get("/{id}") 
-    // @Get
     Map<String, Foto> findById(@PathVariable Long id) { 
         return Collections.singletonMap("foto", fotosClient.findById(id));
     }

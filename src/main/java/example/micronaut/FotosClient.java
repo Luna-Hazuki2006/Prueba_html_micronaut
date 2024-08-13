@@ -11,5 +11,7 @@ public interface FotosClient {
     @Get("/fotos/{id}")
     @Blocking
     Foto findById(@PathVariable Long id);
-
+    @Get("/fotos")
+    @Blocking
+    Iterable<Fruta> buscar();
 }
