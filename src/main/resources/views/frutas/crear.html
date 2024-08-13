@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Photo</title>
+    <style>
+        fieldset {
+            display: grid;
+            grid-template-columns: 1;
+            margin-left: 30%;
+            margin-right: 30%;
+            border-radius: 15px;
+        }
+        
+        fieldset legend {
+            color: grey;
+        }
+        
+        fieldset label {
+            margin: 2%;
+            display: grid;
+            grid-template-columns: 1;
+        }
+        
+        fieldset button {
+            background-color: crimson;
+            color: aliceblue;
+            padding: 1%;
+            margin: 2%;
+            border-radius: 5px;
+        }
+        
+        fieldset p {
+            text-align: center;
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+<!-- <h1 th:text="${photo.title}"></h1>
+<a th:href="${photo.url}"><img th:src="${photo.thumbnailUrl}" th:alt="${photo.title}"/></a> -->
+<h1 style="text-align: center;">La gran lista de frutas</h1>
+<form action="/frutas" method="post">
+    <fieldset>
+        <legend>Crear frutas</legend>
+        <label for="nombre">
+            <span>Nombre: </span>
+            <input type="text" name="nombre" id="nombre" required>
+        </label>
+        <label for="descripcion">
+            <span>Descripción: </span>
+            <textarea name="descripcion" id="descripcion" required></textarea>
+        </label>
+        <label for="imagen">
+            <span>Imagen: </span>
+            <input type="file" name="imagen" id="imagen" accept="*/image" required>
+        </label>
+        <button type="submit">Crear</button>
+    </fieldset>
+</form>
+</body>
+</html>
