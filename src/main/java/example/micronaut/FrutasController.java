@@ -31,33 +31,41 @@ import java.util.Map;
 @ExecuteOn(TaskExecutors.BLOCKING)
 public class FrutasController {
 
-    // private final FrutasClient frutasClient;
-    private final FrutaService frutaService;
+    private final FrutasClient frutasClient;
+    // private final FrutaService frutaService;
 
-    public FrutasController(FrutaService frutaService) {
-        this.frutaService = frutaService;
+    // public FrutasController(FrutaService frutaService) {
+    //     this.frutaService = frutaService;
+    // }
+
+    public FrutasController(FrutasClient frutasClient) { // <2>
+        this.frutasClient = frutasClient;
     }
 
-    // public FrutasController(FrutasClient frutasClient) { // <2>
-    //     this.frutasClient = frutasClient;
-    // }
+    @Produces(MediaType.TEXT_HTML) // <3>
+    @ExecuteOn(TaskExecutors.BLOCKING) // <4>
+    @View("frutas/crear.html") // <5>
+    @Get("/{id}") // <6>
+    Map<String, Fruta> findById(@PathVariable Long id) { // <7>
+        return Collections.singletonMap("fruta", frutasClient.findById(id));
+    }
+
+    @Produces(MediaType.TEXT_HTML)
+    @ExecuteOn(TaskExecutors.BLOCKING)
+    @View("frutas/crear.html")
+    @Get
+    Map<String, String> find() { // <7>
+        return Collections.singletonMap("fruta", "holaaaaaaaaaaaaaaaaaaaa");
+    }
 
     // @Produces(MediaType.TEXT_HTML) // <3>
     // @ExecuteOn(TaskExecutors.BLOCKING) // <4>
     // @View("frutas/mostrar.html") // <5>
-    // @Get("/pruebas/{id}") // <6>
-    // Map<String, Fruta> findById(@PathVariable Long id) { // <7>
-    //     return Collections.singletonMap("foto", frutasClient.findById(id));
+    // @Get // <6>
+    // Map<String, Iterable<Fruta>> list() {
+    //     Map<String, Iterable<Fruta>> data = Collections.singletonMap("frutas", frutasClient.);
+    //     System.out.println(data);
+    //     return data;
     // }
-
-    @Produces(MediaType.APPLICATION_JSON) // <3>
-    // @ExecuteOn(TaskExecutors.BLOCKING) // <4>
-    // @View("frutas/mostrar.html") // <5>
-    @Get // <6>
-    Map<String, Iterable<Fruta>> list() {
-        Map<String, Iterable<Fruta>> data = Collections.singletonMap("frutas", frutaService.list());
-        System.out.println(data);
-        return data;
-    }
 
 }
