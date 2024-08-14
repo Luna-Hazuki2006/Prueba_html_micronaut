@@ -1,0 +1,8 @@
+jpa:
+  default:
+    properties:
+      hibernate:
+        bytecode:
+          provider: none
+mongodb:
+    uri: mongodb+srv://lunahazuki2006:cXU0lYhSncWZ12FM@cluster0.owjghpf.mongodb.net/frutas?retryWrites=true&w=majority&appName=Cluster0
