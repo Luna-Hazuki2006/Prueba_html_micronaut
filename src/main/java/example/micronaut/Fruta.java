@@ -18,59 +18,59 @@ package example.micronaut;
 import io.micronaut.core.annotation.ReflectiveAccess;
 import io.micronaut.serde.annotation.Serdeable;
 
-// @Serdeable // <1>
-// @ReflectiveAccess // <2>
-// // public record Fruta(Long albumId, String title, String url, String thumbnailUrl) {
-// // }
+@Serdeable // <1>
+@ReflectiveAccess // <2>
+public record Fruta(Long albumId, String title, String url, String thumbnailUrl) {
+}
 // public record Fruta(String id, String nombre, String descripcion, String foto) {
 // }
 
-import io.micronaut.core.annotation.NonNull;
-import io.micronaut.core.annotation.Nullable;
-import io.micronaut.data.annotation.GeneratedValue;
-import io.micronaut.data.annotation.Id;
-import io.micronaut.data.annotation.MappedEntity;
+// import io.micronaut.core.annotation.NonNull;
+// import io.micronaut.core.annotation.Nullable;
+// import io.micronaut.data.annotation.GeneratedValue;
+// import io.micronaut.data.annotation.Id;
+// import io.micronaut.data.annotation.MappedEntity;
 
-import jakarta.validation.constraints.NotBlank;
+// import jakarta.validation.constraints.NotBlank;
 
-@MappedEntity(value = "frutas") // <1>
-public class Fruta {
+// @MappedEntity(value = "frutas") // <1>
+// public class Fruta {
 
-    @Id // <2>
-    @GeneratedValue
-    private String id;
+//     @Id // <2>
+//     @GeneratedValue
+//     private String id;
 
-    @NonNull
-    @NotBlank // <3>
-    private final String nombre;
+//     @NonNull
+//     @NotBlank // <3>
+//     private final String nombre;
 
-    @Nullable
-    private String descripcion;
+//     @Nullable
+//     private String descripcion;
 
-    public Fruta(@NonNull String nombre, @Nullable String descripcion) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-    }
+//     public Fruta(@NonNull String nombre, @Nullable String descripcion) {
+//         this.nombre = nombre;
+//         this.descripcion = descripcion;
+//     }
 
-    public String getId() {
-        return id;
-    }
+//     public String getId() {
+//         return id;
+//     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+//     public void setId(String id) {
+//         this.id = id;
+//     }
 
-    @NonNull
-    public String getNombre() {
-        return nombre;
-    }
+//     @NonNull
+//     public String getNombre() {
+//         return nombre;
+//     }
 
-    @Nullable
-    public String getDescripcion() {
-        return descripcion;
-    }
+//     @Nullable
+//     public String getDescripcion() {
+//         return descripcion;
+//     }
 
-    public void setDescripcion(@Nullable String descripcion) {
-        this.descripcion = descripcion;
-    }
-}
+//     public void setDescripcion(@Nullable String descripcion) {
+//         this.descripcion = descripcion;
+//     }
+// }
