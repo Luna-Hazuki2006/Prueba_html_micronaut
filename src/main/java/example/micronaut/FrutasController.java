@@ -50,9 +50,9 @@ public class FrutasController {
     //     return Collections.singletonMap("foto", frutasClient.findById(id));
     // }
 
-    @Produces(MediaType.APPLICATION_JSON) // <3>
-    // @ExecuteOn(TaskExecutors.BLOCKING) // <4>
-    // @View("frutas/mostrar.html") // <5>
+    @Produces(MediaType.TEXT_HTML) // <3>
+    @ExecuteOn(TaskExecutors.BLOCKING) // <4>
+    @View("frutas/mostrar.html") // <5>
     @Get // <6>
     Map<String, Iterable<Fruta>> list() {
         Map<String, Iterable<Fruta>> data = Collections.singletonMap("frutas", frutaService.list());

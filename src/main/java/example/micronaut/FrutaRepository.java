@@ -7,7 +7,7 @@ import io.micronaut.data.repository.CrudRepository;
 
 import java.util.List;
 
-@MongoRepository // <1>
+@MongoRepository// <1>
 public interface FrutaRepository extends CrudRepository<Fruta, String> {
 
     // @NonNull
