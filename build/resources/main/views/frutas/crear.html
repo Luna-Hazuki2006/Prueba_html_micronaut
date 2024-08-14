@@ -95,7 +95,6 @@
             let descripcion = document.createElement('p')
             let contenedor = document.createElement('div')
             let foto = document.createElement('img')
-            let boton = document.createElement('button')
             nombre.innerText = 'Nombre: ' + esto.nombre
             div.appendChild(nombre)
             descripcion.innerText = 'Descripción: ' + esto.descripcion
@@ -104,14 +103,6 @@
             foto.alt = esto.foto
             contenedor.appendChild(foto)
             div.appendChild(contenedor)
-            boton.onclick = async function () {
-                let borrado = await fetch('http://localhost:8080/frutas/' + esto.id, {
-                    method: 'DELETE'
-                })
-                if (borrado.ok) location.reload(true)
-            }
-            boton.innerText = 'Borrar "' + esto.nombre + '"'
-            div.appendChild(boton)
             todas.appendChild(div)
         }
         /*const xhr = new XMLHttpRequest();
