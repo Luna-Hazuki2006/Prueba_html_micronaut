@@ -23,22 +23,22 @@ import io.micronaut.http.annotation.PathVariable;
 import io.micronaut.http.annotation.Post;
 import io.micronaut.http.client.annotation.Client;
 
-@Client(id = "frutas") // <1>
+@Client(id = "photos") // <1>
 public interface FrutasClient {
 
-    // @Get("/frutas/pruebas/{id}")// <2>
+    @Get("/frutas/pruebas/{id}")// <2>
+    @Blocking
+    Fruta findById(@PathVariable Long id); // <3>
+
+    // @Get("/frutas/{id}")// <2>
     // @Blocking
-    // Fruta findById(@PathVariable Long id); // <3>
+    // Optional<Fruta> find(@PathVariable String id);
 
-    @Get("/frutas/{id}")// <2>
-    @Blocking
-    Optional<Fruta> find(@PathVariable String id);
+    // @Get("/frutas")
+    // @Blocking
+    // Iterable<Fruta> list();
 
-    @Get("/frutas")
-    @Blocking
-    Iterable<Fruta> list();
-
-    @Post("/frutas")
-    @Blocking
-    Fruta save(Fruta fruta);
+    // @Post("/frutas")
+    // @Blocking
+    // Fruta save(Fruta fruta);
 }
