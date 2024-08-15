@@ -52,67 +52,10 @@
 <!-- <h1 th:text="${photo.title}"></h1>
 <a th:href="${photo.url}"><img th:src="${photo.thumbnailUrl}" th:alt="${photo.title}"/></a> -->
 <!-- <h1 th:text="${fruta}"></h1> -->
-<h1 style="text-align: center;">La gran lista de frutas</h1>
-<details>
-    <summary>Creación de frutas :D</summary>
-    <form method="post" action="http://localhost:8080/frutas">
-        <fieldset>
-            <legend>Crear frutas</legend>
-            <label for="nombre">
-                <span>Nombre: </span>
-                <input type="text" name="nombre" id="nombre" required>
-            </label>
-            <label for="descripcion">
-                <span>Descripción: </span>
-                <textarea name="descripcion" id="descripcion" required></textarea>
-            </label>
-            <label for="foto">
-                <span>Imagen: </span>
-                <input type="url" name="foto" id="foto" required>
-            </label>
-            <button type="submit">Crear</button>
-        </fieldset>
-    </form>
-</details>
-<section id="todas"></section>
+<h1 style="text-align: center;">Reporte de frutas</h1>
+
 <script>
-    console.log('hola mundo')
-    function crear(event) {
-        //event.preventDefault()
-        location.reload(true)
-        location.href = 'http://localhost:8086/frutas'
-    }
-    async function buscar() {
-        let todas = document.getElementById('todas')
-        let respueta = await fetch("http://localhost:8080/frutas") 
-        let lista = await respueta.json()
-        console.log(lista)
-        for (const esta in lista) {
-            let esto = lista[esta]
-            console.log(esto)
-            let div = document.createElement('div')
-            let nombre = document.createElement('p')
-            let descripcion = document.createElement('p')
-            let contenedor = document.createElement('div')
-            let foto = document.createElement('img')
-            nombre.innerText = 'Nombre: ' + esto.nombre
-            div.appendChild(nombre)
-            descripcion.innerText = 'Descripción: ' + esto.descripcion
-            div.appendChild(descripcion)
-            foto.src = esto.foto
-            foto.alt = esto.foto
-            contenedor.appendChild(foto)
-            div.appendChild(contenedor)
-            todas.appendChild(div)
-        }
-        /*const xhr = new XMLHttpRequest();
-        xhr.open('GET', 'http://localhost:8080/frutas');
-        xhr.onreadystatechange = function () {
-            todas.innerHTML = this.responseText;
-        };
-        xhr.send();*/     
-    }
-    buscar()
+
 </script>
 </body>
 </html>
