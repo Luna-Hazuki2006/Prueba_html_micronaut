@@ -46,6 +46,18 @@
         div, img {
             width: 50%;
         }
+
+        .belleza {
+            color: brown;
+            font-family: cursive;
+            font-size: x-large;
+        }
+
+        .lista > div {
+            background-color: mintcream;
+            border-radius: 5px;
+            margin-left: 4%;
+        }
     </style>
 </head>
 <body>
@@ -53,9 +65,71 @@
 <a th:href="${photo.url}"><img th:src="${photo.thumbnailUrl}" th:alt="${photo.title}"/></a> -->
 <!-- <h1 th:text="${fruta}"></h1> -->
 <h1 style="text-align: center;">Reporte de frutas</h1>
-
+<p style="text-align: right;">
+    <a href="http://localhost:8086/frutas"><span class="belleza">Ver lista de frutas</span></a>
+</p>
+<section id="todos"></section>
 <script>
-
+    async function crear() {
+        let todos = document.getElementById('todos')
+        let respueta = await fetch('http://localhost:8080/tipos')
+        let lista = await respueta.json()
+        let realidad = {}
+        for (const esto in lista) {
+            let esta = lista[esto]
+            realidad[esta.nombre] = []
+            let div = document.createElement('div')
+            let nombre = document.createElement('p')
+            nombre.innerText = 'Nombre del tipo de fruta: ' + esta.nombre
+            div.appendChild(nombre)
+            let mostrar = document.createElement('button')
+            mostrar.type = "button"
+            mostrar.innerText = 'Mostrar'
+            let frutas = await fetch('http://localhost:8080/frutas/tipo/' + esta.nombre)
+            frutas = await frutas.json()
+            for (const real in frutas) {
+                realidad[esta.nombre].push(frutas[real])
+            }
+            mostrar.onclick = function() {
+                let details = document.createElement('details')
+                let summary = document.createElement('summary')
+                summary.innerText = 'Ver todas las frutas de este tipo'
+                details.appendChild(summary)
+                let parte = document.createElement('div')
+                parte.classList.add('lista')
+                for (const frutita in frutas) {
+                    let real = frutas[frutita]
+                    let division = document.createElement('div')
+                    let nombreFruta = document.createElement('p')
+                    let descripcionFruta = document.createElement('p')
+                    let contenedor = document.createElement('div')
+                    let foto = document.createElement('img')
+                    nombreFruta.innerText = 'Nombre: ' + real.nombre
+                    division.appendChild(nombreFruta)
+                    descripcionFruta.innerText = 'Descripción: ' + real.descripcion
+                    division.appendChild(descripcionFruta)
+                    foto.src = real.foto
+                    foto.alt = real.foto
+                    contenedor.appendChild(foto)
+                    division.appendChild(contenedor)
+                    parte.appendChild(division)
+                }
+                details.appendChild(parte)
+                div.appendChild(details)
+                mostrar.remove()
+            }
+            let cantidad = document.createElement('p')
+            cantidad.innerText = 'Cantidad: ' + realidad[esta.nombre].length
+            div.appendChild(cantidad)
+            let descripcion = document.createElement('p')
+            descripcion.innerText = 'Descripción: ' + esta.descripcion
+            div.appendChild(descripcion)
+            div.appendChild(mostrar)
+            todos.appendChild(div)
+        }
+        console.log(realidad)
+    }
+    crear()
 </script>
 </body>
 </html>
