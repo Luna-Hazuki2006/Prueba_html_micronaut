@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
-    <title>Frutitas</title>
+    <title>Reportes</title>
     <style>
         fieldset {
             display: grid;
@@ -46,6 +46,12 @@
         div, img {
             width: 50%;
         }
+
+        .belleza {
+            color: brown;
+            font-family: cursive;
+            font-size: x-large;
+        }
     </style>
 </head>
 <body>
@@ -53,22 +59,47 @@
 <a th:href="${photo.url}"><img th:src="${photo.thumbnailUrl}" th:alt="${photo.title}"/></a> -->
 <!-- <h1 th:text="${fruta}"></h1> -->
 <h1 style="text-align: center;">La gran lista de frutas</h1>
+<p style="text-align: right;">
+    <a href="http://localhost:8086/frutas/reporte"><span class="belleza">Ver reporte de frutas</span></a>
+</p>
+<details>
+    <summary>Creación de tipos</summary>
+    <form action="http://localhost:8080/tipos" method="post">
+        <fieldset>
+            <legend>Crear tipos</legend>
+            <label for="nombreTipo">
+                <span>Nombre: </span>
+                <input type="text" name="nombre" id="nombreTipo" required>
+            </label>
+            <label for="descripcionTipo">
+                <span>Descripción: </span>
+                <textarea name="descripcion" id="descripcionTipo" required></textarea>
+            </label>
+            <button type="submit">Crear</button>
+        </fieldset>
+    </form>
+</details>
 <details>
     <summary>Creación de frutas :D</summary>
     <form method="post" action="http://localhost:8080/frutas">
         <fieldset>
             <legend>Crear frutas</legend>
-            <label for="nombre">
+            <label for="nombreFruta">
                 <span>Nombre: </span>
-                <input type="text" name="nombre" id="nombre" required>
+                <input type="text" name="nombre" id="nombreFruta" required>
             </label>
-            <label for="descripcion">
+            <label for="descripcionFruta">
                 <span>Descripción: </span>
-                <textarea name="descripcion" id="descripcion" required></textarea>
+                <textarea name="descripcion" id="descripcionFruta" required></textarea>
             </label>
-            <label for="foto">
+            <label for="fotoFruta">
                 <span>Imagen: </span>
-                <input type="url" name="foto" id="foto" required>
+                <input type="url" name="foto" id="fotoFruta" required>
+            </label>
+            <label for="tipoFruta">
+                <span>Tipo: </span>
+                <select name="tipo" id="tipoFruta" required>
+                </select>
             </label>
             <button type="submit">Crear</button>
         </fieldset>
@@ -84,8 +115,19 @@
     }
     async function buscar() {
         let todas = document.getElementById('todas')
-        let respueta = await fetch("http://localhost:8080/frutas") 
+        let tipoFruta = document.getElementById('tipoFruta')
+        let respueta = await fetch('http://localhost:8080/tipos')
         let lista = await respueta.json()
+        for (const esto in lista) {
+            let esta = lista[esto]
+            let opcion = document.createElement('option')
+            opcion.value = esta.nombre
+            opcion.innerText = esta.nombre
+            console.log(opcion)
+            tipoFruta.appendChild(opcion)
+        }
+        respueta = await fetch("http://localhost:8080/frutas") 
+        lista = await respueta.json()
         console.log(lista)
         for (const esta in lista) {
             let esto = lista[esta]
@@ -93,12 +135,15 @@
             let div = document.createElement('div')
             let nombre = document.createElement('p')
             let descripcion = document.createElement('p')
+            let tipo = document.createElement('p')
             let contenedor = document.createElement('div')
             let foto = document.createElement('img')
             nombre.innerText = 'Nombre: ' + esto.nombre
             div.appendChild(nombre)
             descripcion.innerText = 'Descripción: ' + esto.descripcion
             div.appendChild(descripcion)
+            tipo.innerText = 'Tipo: ' + esto.tipo
+            div.appendChild(tipo)
             foto.src = esto.foto
             foto.alt = esto.foto
             contenedor.appendChild(foto)

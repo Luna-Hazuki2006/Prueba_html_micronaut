@@ -31,23 +31,23 @@ import java.util.Map;
 @ExecuteOn(TaskExecutors.BLOCKING)
 public class FrutasController {
 
-    private final FrutasClient frutasClient;
+    // private final FrutasClient frutasClient;
     // private final FrutaService frutaService;
 
     // public FrutasController(FrutaService frutaService) {
     //     this.frutaService = frutaService;
     // }
 
-    public FrutasController(FrutasClient frutasClient) { // <2>
-        this.frutasClient = frutasClient;
-    }
+    // public FrutasController(FrutasClient frutasClient) { // <2>
+    //     this.frutasClient = frutasClient;
+    // }
 
     @Produces(MediaType.TEXT_HTML) // <3>
     @ExecuteOn(TaskExecutors.BLOCKING) // <4>
-    @View("frutas/crear.html") // <5>
-    @Get("/{id}") // <6>
-    Map<String, Fruta> findById(@PathVariable Long id) { // <7>
-        return Collections.singletonMap("fruta", frutasClient.findById(id));
+    @View("frutas/reporte.html") // <5>
+    @Get("/reporte") // <6>
+    Map<String, String> reportar() { // <7>
+        return Collections.singletonMap("fruta", "holaaaaaaaaaaaaaaaaaaaa");
     }
 
     @Produces(MediaType.TEXT_HTML)

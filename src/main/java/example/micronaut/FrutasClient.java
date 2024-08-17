@@ -28,7 +28,7 @@ public interface FrutasClient {
 
     @Get("/frutas/pruebas/{id}")// <2>
     @Blocking
-    Fruta findById(@PathVariable Long id); // <3>
+    Fruta findById(@PathVariable String id); // <3>
 
     // @Get("/frutas/{id}")// <2>
     // @Blocking
